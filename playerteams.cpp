@@ -3,22 +3,59 @@
 #include <string>
 #include <array>
 #include <vector>
-using namespace std;
+#include <chrono>
 
+using namespace std;
+using namespace std::chrono;
 
 int  main(){
-    vector<vector<int>> playertable(n, vector<int>(m, 0));
+    int m =0;
+    int n =0;
+    vector<vector<int>> playertable(100, vector<int>(100, 0));
 
-    int m;
-    int n;
+   
     cout << "player perfomance analyzer" << endl;
     cout << endl;
 
     for(;;){
+
+        cout << "Enter Team " << n  <<  " Match " << m << " results"<< endl;
+        cin >> playertable[n][m]    ;
+        cin.ignore();
         
-        cin >> playertable[n][m]     
+        cout << "Press space to continue, Finish? Press Enter." << endl;
+        string tempinput213;
+        getline(cin, tempinput213);
+        if (!(cin >> playertable[n][m])) {
+           break;
+        }
+        if (tempinput213.empty() == true){
+            break;
+        }else{
+            cin.ignore();
+            
+        }
+        cout << "Start player team " << n+1 << "? (yes or no)" << endl;
+        string answ22;
+        cin >> answ22;
+        cin.ignore();
+
+
+        if (answ22 == "yes")
+        {
+            n+=1;
+            m=0;
+            cout << "Added Player Team " << n << endl;
+
+
+        }else{
+            //donothing.
+            m+=1;
+            
+        }
+        
+         
     }    
-   
-    return 0;
+  
 
 }
