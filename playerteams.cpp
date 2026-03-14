@@ -18,7 +18,7 @@ int  main(){
     cout << endl;
 
     for(;;){
-
+        
         cout << "Enter Team " << n  <<  " Match " << m << " results"<< endl;
         cin >> playertable[n][m]    ;
         cin.ignore();
@@ -57,5 +57,16 @@ int  main(){
          
     }    
   
-
+    cout << "Player Team Results --------------" << endl;
+    for (int i = 0; i < playertable.size(); i++)
+    {
+        cout << "Team " << i << " Results: " ;
+         
+        for (int x = 0; x < playertable[i].size(); x++)
+        {
+            cout << " " << playertable[i][x] << " ";
+        }
+        
+    }
+    
 }
