@@ -20,7 +20,7 @@ int main(){
 
 //How to output the entire grid values from a corner to the other corner
 
-int gridwrite2_foreach();
+int gridwrite2_foreach(vector<vector<int>>& grid_transferred);
 int gridwrite(){
     vector<vector<int>> grid(4, vector<int>(4,0));
     for(int i = 0; i < grid.size(); i++){
@@ -40,9 +40,22 @@ int gridwrite(){
              
         }
     }
+    gridwrite2_foreach(grid);
+
     return 0;
 }
 
-int gridwrite2_foreach(){
+int gridwrite2_foreach(vector<vector<int>>& grid_transferred){
+
+    //& always refers to the refernce. meaning that opassing the address, not the value itself. 
+    for(auto& x: grid_transferred){
+        for(auto& val : x){
+            cout << val << endl;
+
+        }
+        cout << endl;
+        
+    }
+    return 0;
     
 }
