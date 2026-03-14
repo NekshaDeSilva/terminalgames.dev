@@ -50,7 +50,7 @@ int gridwrite2_foreach(vector<vector<int>>& grid_transferred){
     //& always refers to the refernce. meaning that opassing the address, not the value itself. 
     for(auto& x: grid_transferred){
         for(auto& val : x){
-            cout << val << endl;
+            cout << val;
 
         }
         cout << endl;
