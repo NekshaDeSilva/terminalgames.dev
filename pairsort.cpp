@@ -7,6 +7,9 @@
 #include <vector>
 
 using namespace std;
+int storeorginaltoo(){
+
+}
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -24,11 +27,16 @@ int main(){
     }
     cout << "Start regular normal sort'\n" ;
     sort(bio.begin(), bio.end());
+
     //Print after sorting.
     for(int i = 0; i < bio.size(); i++){
         cout << bio[i].first << " " << bio[i].second << "\n";
         
     }
+    
+    /*Next, sorting and then, storing the original values along with the newly sorted values.*/
+        storeorginaltoo(bio);
+        
 
 
 
