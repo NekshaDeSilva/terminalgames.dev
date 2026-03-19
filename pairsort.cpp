@@ -15,7 +15,7 @@ int main(){
     vector<pair<string,int>> list;
     list.reserve(100);
     string apple_color;
-    int appplebag_no;
+    int appplebag_no =0;
     for (;;){
         appplebag_no++;
         getline(cin, apple_color);
