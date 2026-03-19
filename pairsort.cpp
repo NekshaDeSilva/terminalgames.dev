@@ -17,7 +17,7 @@ int main(){
     string apple_color;
     int appplebag_no;
     for (;;){
-        
+        appplebag_no++;
         getline(cin, apple_color);
 
         list.emplace_back( apple_color, appplebag_no);
@@ -25,13 +25,13 @@ int main(){
             break;
 
         }
-appplebag_no++;
+
 
     }
 
     sort(list.begin(), list.end());
 
-    for(int i =0; i < list.size(); i++){
+    for(int i =1; i < list.size(); i++){
         cout << list[i].first << "orginal position: " << list[i].second << "\n\n";
 
     }
