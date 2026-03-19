@@ -1,43 +1,38 @@
+//Apple into apple bag and then showing the previosu bag the apple was.
+
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <random>
-#include <array>
-#include <algorithm>
 #include <vector>
+#include <array>
+#include <random>
+#include <algorithm>
 
 using namespace std;
-int storeorginaltoo(){
-
-}
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    random_device randoms;
-    mt19937 gen(randoms());
-    uniform_int_distribution<> distr(0,10);
-
-    //fastio
-    //The engine automatically sorts the numbers in a accensing and a almost lexxicographical order. And what happens is that it sorts them out from small to high level.
-
-    vector<pair<int, int>> bio;
-    bio.reserve(10);
-    for (int i = 0; i < 10;  i++){
-    bio.emplace_back(distr(gen), distr(gen));
-    }
-    cout << "Start regular normal sort'\n" ;
-    sort(bio.begin(), bio.end());
-
-    //Print after sorting.
-    for(int i = 0; i < bio.size(); i++){
-        cout << bio[i].first << " " << bio[i].second << "\n";
+    vector<pair<string,int>> list;
+    list.reserve(100);
+    string apple_color;
+    int appplebag_no;
+    for (;;){
         
+        getline(cin, apple_color);
+
+        list.emplace_back( apple_color, appplebag_no);
+        if(apple_color.empty() == true){
+            break;
+
+        }
+appplebag_no++;
+
     }
-    
-    /*Next, sorting and then, storing the original values along with the newly sorted values.*/
-        storeorginaltoo(bio);
-        
 
+    sort(list.begin(), list.end());
 
+    for(int i =0; i < list.size(); i++){
+        cout << list[i].first << "orginal position: " << list[i].second << "\n\n";
 
+    }
 }
