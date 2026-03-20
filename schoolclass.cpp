@@ -33,12 +33,20 @@ void calc(vector<pair<string, pair<int,int>>>& datad){
         scimarks.emplace_back(datad[i].first, datad[i].second.second);
 
     }
-    pair<string, int> highestmath = *max_element(mathmarks.begin() ,mathmarks.end());
-     pair<string, int> highestsci = *max_element(scimarks.begin(),scimarks.end());
+    pair<string, int> highestmath = *max_element(mathmarks.begin() ,mathmarks.end(), [](auto a, auto b){
+        return a.second < b.second;
+
+    });
+     pair<string, int> highestsci = *max_element(scimarks.begin(),scimarks.end(), [](auto a, auto b){
+        return a.second < b.second;
+
+     });
+     int ranker = 0;
 
      for (int i = 0; i < datad.size(); i++)
-     {
-        cout << highestpair[i].first << "'s total: " << highestpair[i].second << "\n";
+     {  
+        ranker++;
+        cout << highestpair[i].first << "'s total: " << highestpair[i].second << "| Rank: " << ranker << "\n";
 
      }
      cout << highestmath.first << " Is the highest Math Marks with score " << highestmath.second << "\n";
