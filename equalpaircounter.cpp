@@ -12,14 +12,16 @@ int main(){
     cin.tie(NULL);
 vector<pair<int,int>> list;
 int count2  = 0;
-list.reserve(100);
+list.reserve(100);  
+ pair<int, int> idealpair = {2,5};
 
     int firstelement, secelement;
     for(int i = 0; i < 10 ; i++){
         if(i > 4){
-            if(list[i-5].first >= 2 && list[i-5].second >= 5){
+            if(list[i-5] > idealpair){
                 cout << list[i-5].first  << " " << list[i-5].second << "\n";
-
+                count2++;
+                
 
             }else{
                 //donothing
