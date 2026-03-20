@@ -45,7 +45,6 @@ void maxpair(){
 
         
     }
-
     auto biggest = *max_element(list.begin(), list.end());
     cout << "Biggest: " << biggest.first  << " " << biggest.second;
 
