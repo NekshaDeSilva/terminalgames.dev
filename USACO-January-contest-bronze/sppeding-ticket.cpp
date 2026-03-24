@@ -94,7 +94,7 @@ int  main(){
 
         }
         
-    }  
+    }  0
     cout << calc(roadmade, itsjourneymade);
     
 }
