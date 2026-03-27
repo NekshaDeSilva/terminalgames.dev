@@ -13,5 +13,5 @@ int main(){
     freopen("blist.in", "r", stdin);
     freopen("blist.out", "w", stdout);
     ///go
-    
+    int numofcows = 
 }
