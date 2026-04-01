@@ -24,8 +24,8 @@ using str = string;
         int numoftests;
         cin>> numoftests;
         string wholething;
-        cin.ignore();
-        getline(cin,  wholething);
+        cin >> wholething;
+
         vector<char> taskset;
         bool state3= false;
         for(auto& x: wholething){
@@ -45,13 +45,13 @@ using str = string;
                     if(onlyints[i] == onlyints[x]){
                         
                         if(state3 == false){
-                            cout << "NO" <<"\n";
+                        
                             
                             state423 =1;
                             break;
 
 
-                        }else if(state3 =true){
+                        }else if(state3 ==true){
                             state3=true;
                         }
                         
@@ -66,13 +66,13 @@ using str = string;
         }
         if(state423 == 0){
 
-        
+            
        
             cout << "YES" << "\n";
             
     
         }else{
-            
+                cout << "NO" << "\n";
         }
         }
 
