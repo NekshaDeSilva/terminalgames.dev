@@ -8,25 +8,11 @@
 using namespace std;
 using ll = long long;
 using var = int;
+using str = string;
 
-int o= 5;
- int result =o;
-void recurse(long long int x){
 
-    if(x ==1){
-        
-        cout << result;
-        return;
-
-    }
-   result*=x-1;
-    recurse(x-1);
-
-}
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    //go
-    recurse(o);
     
 }
