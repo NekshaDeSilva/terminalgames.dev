@@ -10,13 +10,14 @@ using ll = long long;
 using var = int;
 using str = string;
 void oprint(int i){
-    cout << abs(i-5) << "\n";
+    
+    
 
     if(i == 0){
        return ; 
 
     }
-    oprint(--i);//change the value first and use it or pass it/ i++ - pass the value or use it first and then pass it.
+    oprint();//change the value first and use it or pass it/ i++ - pass the value or use it first and then pass it.
     
 
 }
@@ -28,6 +29,6 @@ int main(){
     cin>> n;
 
 
-    oprint(n);
+    oprint(n,0);
 
 }
