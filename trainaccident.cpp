@@ -13,7 +13,8 @@ int trainboarding(vector<pair<pair<int, string>, pair<int, string>>>& boardlist)
     int coutnter2312 = 0;
     random_device ticketc;
       mt19937 gen(ticketc());
-      uniform_int_distribution<> distr(29482,948924);
+      uniform_int_distribution<> distr(1,999);
+   
      bool state2 = true;//false means left, true means right
        
     int trainmaxcap = 100;
