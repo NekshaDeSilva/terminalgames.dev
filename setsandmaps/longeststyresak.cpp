@@ -1,36 +1,48 @@
 #include <iostream>
-#include <vector>
+#include <iomanip>
+#include <string>
 #include <algorithm>
-#include <random>
-#define sortall(x) sort((x).begin(), (x).end())
-#define this is a cool thing
+#include <cmath>
+#include <vector>
+#include <array>
+
 using namespace std;
 int main(){
-    ios_base::sync_with_stdio(0);
-    cin.tie(NULL);
+    int tempval;
+    int count = 0;
     vector<int> list;
     list.reserve(1000);
-    int numofints = 0;
-    cin >> numofints;
+    int numofelms = 0;
+    cin >> numofelms;
+    for(int  i =0 ; i < numofelms;  i++)    {
+        cin>> tempval;
 
-    string tempval ;
-    cin >> tempval;
-    for(auto& x: tempval){
-        int something = x-'0';
-        list.push_back(something);
+        list.push_back(tempval);
     }
+    vector<int> streakhighs ;
+    streakhighs.reserve(numofelms);
+
+    ////go ahead.
     
-    sortall(list);
-    int current=0;
-    for(int i = 0;  i < tempval.length(); i++){
-        if(list[i] == list[i+1] && i+1 < tempval.length()){
-            current++;
+    for(int i = 0;  i < numofelms;  i ++){
+
+        for(int x = i+1; x< numofelms;  x++){
+            if(x == numofelms-1){
+                count++;
+            }
+
+            if(list[i] == list[x]){
+                count++;
+
+                
+            }else{
+                continue;
+            }
             
-        }else{
-            current = 0;
-
         }
+        streakhighs.push_back(count);
+        count =0;
     }
-    cout << current;    
-    
- } 
+    auto& maxelm = *max_element(streakhighs.begin(), streakhighs.end());
+    cout << maxelm;
+}
