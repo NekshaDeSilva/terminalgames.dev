@@ -23,9 +23,9 @@ int main(){
     sortall(list);
     int current=0;
     for(int i = 0;  i < tempval.length(); i++){
-        if(list[i] == list[i+1] && i < tempval.length()){
+        if(list[i] == list[i+1] && i+1 < tempval.length()){
             current++;
-            i++;
+            
         }else{
             current = 0;
 
