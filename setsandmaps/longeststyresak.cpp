@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <random>
-#define all(x) (x).begin(), (x).end()
+#define sortall(x) sort((x).begin(), (x).end())
 #define this is a cool thing
 using namespace std;
 int main(){
@@ -10,30 +10,27 @@ int main(){
     cin.tie(NULL);
     vector<int> list;
     list.reserve(1000);
+    int numofints = 0;
+    cin >> numofints;
+
     string tempval ;
     cin >> tempval;
-    int tempv = 0;
-    while(cin >> tempv){      
-        if(!isdigit(tempv)){
-            break;
-        }
-        list.push_back(tempv);
+    for(auto& x: tempval){
+        int something = x-'0';
+        list.push_back(something);
     }
-    int currentint= 0;
-    int streak = 0;
     
-    sort(list.begin(), list.end());
-     currentint = list[0];
-    for(int i = 0;  i < list.size(); i++ ){
-       
-        if(currentint==list[i+1]){
-            cout << list[i];
-            streak++;
+    sortall(list);
+    int current=0;
+    for(int i = 0;  i < tempval.length(); i++){
+        if(list[i] == list[i+1] && i < tempval.length()){
+            current++;
             i++;
-            currentint = list[i];
-            
+        }else{
+            current = 0;
 
         }
     }
-    cout << streak;
+    cout << current;    
+    
  } 
