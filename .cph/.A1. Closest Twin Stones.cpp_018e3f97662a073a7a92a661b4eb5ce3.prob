@@ -1,0 +1,1 @@
+{"name":"Local: A1","url":"c:\\Users\\HP\\Desktop\\terminalgames.dev\\A1. Closest Twin Stones.cpp","tests":[{"id":1775486428252,"input":"6\n8 3 17 10 11 20","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\HP\\Desktop\\terminalgames.dev\\A1. Closest Twin Stones.cpp","group":"local","local":true}
