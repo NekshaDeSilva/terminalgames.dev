@@ -2,6 +2,7 @@
 #include <vector>
 #include <random>
 #define all(x) (x).begin(), (x).end()
+#define this is a cool thing
 using namespace std;
 int main(){
     ios_base::sync_with_stdio(0);
