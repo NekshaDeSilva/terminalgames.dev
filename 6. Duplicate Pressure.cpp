@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <array>
 #include <cmath>
+#include <utility>
 #include <random>
 /*New one*/
 #include <climits>
@@ -39,12 +40,14 @@ using namespace std;
                 }
         }
     }
-    s(dup);
+    sort(dup.begin(), dup.end(), [](const auto& start, const auto& end){
+        return start > end;
+
+    })
     dup.erase(remove_if(dup.begin(), dup.end(),[](const pair<int, int>& p) { return p.first == 0; }),dup.end());
 
     if (dup.empty()) return 0; // or handle as needed
-
-    auto& lowest = *min_element(dup.begin(), dup.end());
-    cout << lowest.first;
+    cout << dup[0].first;
 
 }
+//refer to the functors and function pointers
