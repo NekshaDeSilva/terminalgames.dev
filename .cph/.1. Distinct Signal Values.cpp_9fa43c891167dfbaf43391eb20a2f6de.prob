@@ -1,0 +1,1 @@
+{"name":"Local: 1","url":"c:\\Users\\HP\\Desktop\\terminalgames.dev\\1. Distinct Signal Values.cpp","tests":[{"id":1775555021886,"input":"8\n5 2 5 7 2 2 9 5","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\HP\\Desktop\\terminalgames.dev\\1. Distinct Signal Values.cpp","group":"local","local":true}
