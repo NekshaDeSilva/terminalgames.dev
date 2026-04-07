@@ -41,7 +41,7 @@ int main(){
     vector<ll> allvec;
     allvec.reserve(n+m);
     for(ll i= 0; i < (n +m); i++){
-        if(i >n){
+        if(i >= n){
             allvec.push_back(secvec[i-n]);
 
         }else{
