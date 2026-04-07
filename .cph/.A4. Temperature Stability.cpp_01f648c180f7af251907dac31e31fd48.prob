@@ -1,0 +1,1 @@
+{"name":"Local: A4","url":"c:\\Users\\HP\\Desktop\\terminalgames.dev\\A4. Temperature Stability.cpp","tests":[{"id":1775531811300,"input":"6\n7 1 4 8 5 10","output":"1 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\HP\\Desktop\\terminalgames.dev\\A4. Temperature Stability.cpp","group":"local","local":true}
