@@ -9,11 +9,32 @@
 #include <numeric>
 #include <random>
 #include <utility>
+#include <set>
 using ll = long long;
 using namespace std;
 ll  recurse(vector<ll>& weights, ll numofc, ll maxw, vector<pair<ll ,ll>>& ferris){
     int totalbucs= 0;
     bool debug = false;
+
+    multiset<ll> alive(weights.begin(), weights.end());
+    while(!alive.empty()){
+        auto heavyIt = prev(alive.end());
+        ll heavy = *heavyIt;
+        alive.erase(heavyIt);
+
+        ll need = maxw - heavy;
+        auto partnerIt = alive.upper_bound(need);
+        if(partnerIt != alive.begin()){
+            --partnerIt;
+            ferris.push_back(make_pair(heavy, *partnerIt));
+            alive.erase(partnerIt);
+        }else{
+            ferris.push_back(make_pair(heavy, -1));
+        }
+        totalbucs++;
+    }
+    return totalbucs;
+
     // weights.resize( weights.size() +5, 0);
 
     /*if you need to addd a certain number of elemtns, you can use that above appropach, but if its not the case, where if you think to add or remove elements from the start or to the start, look for the file addremovevector.cpp*/
