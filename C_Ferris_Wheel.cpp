@@ -17,48 +17,30 @@ ll  recurse(vector<ll>& weights, ll numofc, ll maxw, vector<pair<ll ,ll>>& ferri
 
     /*if you need to addd a certain number of elemtns, you can use that above appropach, but if its not the case, where if you think to add or remove elements from the start or to the start, look for the file addremovevector.cpp*/
 for(int i =0;  i < numofc; i++){
-    if(weights[i] == 0){
-        continue;
-    }
     if(weights[i] == maxw){
 
         totalbucs++;
-        weights[i] = 0;
 
     }else{
-        auto firstchild = weights.begin() + i;
+        auto firstchild = lower_bound(weights.begin(), weights.end(), weights[i]);
 
-        auto secchild = upper_bound(weights.begin(), weights.end(), (maxw - weights[i]));
-        if(secchild != weights.begin()){
-            --secchild;
-        }else{
-            secchild = weights.end();
-        }
-
-        while(secchild != weights.end() && (secchild == firstchild || *secchild == 0)){
-            if(secchild == weights.begin()){
-                secchild = weights.end();
-                break;
-            }
-            --secchild;
-        }
-
-        if(secchild != weights.end() && (*firstchild + *secchild) <= maxw){
+        auto secchild = lower_bound(weights.rbegin(), weights.rend(), (maxw - weights[i]));
+        if((*firstchild + *secchild) <= maxw){
             totalbucs++;
     ll loc1 = (firstchild - weights.begin());
-            ll loc2 = (secchild - weights.begin());
+            ll loc2 = (weights.rend()- secchild) -1;
         
             weights[loc1] =0   ;
             weights[loc2] =0;
 
-        }else if(*firstchild == 0 || secchild == weights.end() || *secchild==0){
+        }else if(*firstchild == 0 || *secchild==0){
             continue;
         }else{
 
           
         if(*firstchild > maxw || *secchild > maxw){
              ll loc1 = (firstchild - weights.begin());
-                     ll loc2 = (secchild - weights.begin());
+           ll loc2 = (weights.rend()- secchild) -1;
         
             
             
@@ -78,7 +60,7 @@ for(int i =0;  i < numofc; i++){
 
         cout << "-----------\n";
         cout << "first child: " << *firstchild << "\n";
-        cout << "second child: " << (secchild == weights.end() ? -1 : *secchild) << "\n";
+        cout << "second child: " << *secchild << "\n";
     }
 }   
 for(int i =0;  i < numofc;  i++){
@@ -106,7 +88,7 @@ int main(){
 
     }
 
-    sort(weights.begin(), weights.end());
+    sort(weights.rbegin(), weights.rend());
 
 
 
