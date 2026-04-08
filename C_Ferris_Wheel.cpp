@@ -13,22 +13,45 @@ using ll = long long;
 using namespace std;
 ll  recurse(vector<ll>& weights, ll numofc, ll maxw, vector<pair<ll ,ll>>& ferris){
     int totalbucs= 0;
+    bool debug = false;
     // weights.resize( weights.size() +5, 0);
 
     /*if you need to addd a certain number of elemtns, you can use that above appropach, but if its not the case, where if you think to add or remove elements from the start or to the start, look for the file addremovevector.cpp*/
 for(int i =0;  i < numofc; i++){
+    if(weights[i] == 0){
+        continue;
+    }
     if(weights[i] == maxw){
 
         totalbucs++;
+        weights[i] = 0;
+        continue;
 
     }else{
-        auto firstchild = lower_bound(weights.begin(), weights.end(), weights[i]);
+        auto firstchild = weights.begin() + i;
 
-        auto secchild = lower_bound(weights.rbegin(), weights.rend(), (maxw - weights[i]));
+        auto secchild = upper_bound(weights.begin(), weights.end(), (maxw - weights[i]));
+        if(secchild == weights.begin()){
+            totalbucs++;
+            weights[i] = 0;
+            continue;
+        }
+        --secchild;
+
+        while(secchild != weights.begin() && (secchild == firstchild || *secchild == 0)){
+            --secchild;
+        }
+
+        if(secchild == firstchild || *secchild == 0 || ((*firstchild + *secchild) > maxw)){
+            totalbucs++;
+            weights[i] = 0;
+            continue;
+        }
+
         if((*firstchild + *secchild) <= maxw){
             totalbucs++;
     ll loc1 = (firstchild - weights.begin());
-            ll loc2 = (weights.rend()- secchild) -1;
+            ll loc2 = (secchild - weights.begin());
         
             weights[loc1] =0   ;
             weights[loc2] =0;
@@ -40,7 +63,7 @@ for(int i =0;  i < numofc; i++){
           
         if(*firstchild > maxw || *secchild > maxw){
              ll loc1 = (firstchild - weights.begin());
-           ll loc2 = (weights.rend()- secchild) -1;
+                     ll loc2 = (secchild - weights.begin());
         
             
             
@@ -58,9 +81,11 @@ for(int i =0;  i < numofc; i++){
             
         }
 
-        cout << "-----------\n";
-        cout << "first child: " << *firstchild << "\n";
-        cout << "second child: " << *secchild << "\n";
+        if(debug){
+            cout << "-----------\n";
+            cout << "first child: " << *firstchild << "\n";
+            cout << "second child: " << *secchild << "\n";
+        }
     }
 }   
 for(int i =0;  i < numofc;  i++){
@@ -88,7 +113,7 @@ int main(){
 
     }
 
-    sort(weights.rbegin(), weights.rend());
+    sort(weights.begin(), weights.end());
 
 
 
