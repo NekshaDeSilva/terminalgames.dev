@@ -13,11 +13,28 @@
 using ll = long long;
 using namespace std;
 
-ll  recurse(vector<ll>& weights, ll numofc, ll maxw, vector<pair<ll ,ll>>& ferris){
+ll  recurse(vector<ll>& weights1, ll numofc, ll maxw, vector<pair<ll ,ll>>& ferris){
+    multiset<ll> weights;
+    for(int i =0; i < numofc ; i++){
+        weights1.insert(weights1[i]);
 
+    }
 
+    ll carts =0;
+    multiset comp<int,  greater<int>>
+    for(int i =0;  i <  numofc; i ++){
+        if(weights[i] > maxw){
+            carts++;
+
+        }else{
+            auto firstchild = lower_bound(weights1[i]);
+            auto secchildv = ;
+            if(weights[firstchild])
+        }
+    }
 
 }
+
 
 
 int main(){

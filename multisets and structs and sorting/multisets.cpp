@@ -16,8 +16,20 @@
 
 using namespace std;
 using ll =long long ;
+struct mycar    
+{
+int age;
+string name;
+string address;
+
+};
+
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
-    multiset
+    mycar somecar;
+
+    multiset<int,somecar> somevect;
+
+    somevect.insert(2, somecar.name = "name")
 }
