@@ -15,7 +15,7 @@ using namespace std;
 
 ll  recurse(vector<ll>& weights, ll numofc, ll maxw, vector<pair<ll ,ll>>& ferris){
 
-    
+
 
 }
 
