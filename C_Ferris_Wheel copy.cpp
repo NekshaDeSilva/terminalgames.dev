@@ -17,18 +17,22 @@ ll  recurse(vector<ll>& weights1, ll numofc, ll maxw, vector<pair<ll ,ll>>& ferr
     multiset<ll> weights;
     for(int i =0; i < numofc ; i++){
         weights1.insert(weights1[i]);
-
+        
     }
 
     ll carts =0;
     multiset comp<int,  greater<int>>
+    auto it;
+
     for(int i =0;  i <  numofc; i ++){
+        it = weights.find(i);
+
         if(weights[i] > maxw){
             carts++;
             
         }else{
             auto firstchild = lower_bound(weights1[i]);
-            auto secchildv = ;
+            auto secchildv = upper_bound(abs(maxw-weights[i]));
             if(weights[firstchild])
         }
     }
