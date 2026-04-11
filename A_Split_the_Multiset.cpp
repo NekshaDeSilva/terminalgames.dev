@@ -21,7 +21,7 @@ int main(){
     cin.tie(NULL);
     //GO        
 
-    multiset<pair<int, string>, greater<int, string>> playerprofile;
+    multiset<pair<int, string>, greater<pair<int, string>>> playerprofile;
     //how to make a copy of the vectors, mulsets or arrays, the thing is siple what you have to do is, 
     /*multiset<int> someset;
       someset.insert(anotherset.begin(), anotherset.end();
@@ -49,20 +49,15 @@ int main(){
 
     }
 
-    auto repitions;
-    for(auto x : playerprofile){
+    // auto repitions; /*critical EEROR:: YOU CANT DECLARE AUTO ALONE HEREL. AUTO MUSDT KNOW ITS TYPE IMIDTAE=LY AT THE TIME OF IITAILIZATION. MUST RULE. */
+    ll distance42 = distance(playerprofile.begin(), playerprofile.end())
+ 
+ 
+    for(auto it = playerprofile.begin(), it != playerprofile.end(), ++i){
+
         
-        if(x  == playerprofile.end()){
-            break;
-
-        }
-        
-        repitions = equal_range(x.first);
-            playerprofile.erase( repitions.first, repitions.second);
-
-
     }
-    // for(;;){
+    //for(;;){
 
     
     //     if(distance(repitions.first , repitions.second)){
@@ -73,10 +68,11 @@ int main(){
     // }
 
     int counter = 0;
+    // int lastint = *[playerprofile.end()-1]; NOTE: WE cabnnot use this in herwe at all like we do usually do in vectore,s in here, we have to keep in lour midn that the pointers or the pointer addresses are not linear. which means that they;rent somehow linear,so hence you cannot go backward and froqwarfd with +1,+2,-2, etc. so sicne that is the casde, what we have to do is, that we need to make sure that 
 
     for(auto x : playerprofile){        
         if(counter > numofc-4){
-            if(x == playerprofile.end()){
+            if(x.first == lastint){
                 continue;   
             }
             cout << x.first  << ":"  << x.second<< "\n";
