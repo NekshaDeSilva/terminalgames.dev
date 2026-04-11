@@ -19,44 +19,71 @@ int main(){
 
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
-    //GO    
+    //GO        
 
-    ll t;
-    cin >>t;
-    for(ll x = 0;  x < t;  x++){
-        
-    multiset<int> s;
-    int temp;
-    int initnum = 0;
-    int k =0;
+    multiset<pair<int, string>, greater<int, string>> playerprofile;
+    //how to make a copy of the vectors, mulsets or arrays, the thing is siple what you have to do is, 
+    /*multiset<int> someset;
+      someset.insert(anotherset.begin(), anotherset.end();
+     and if you need to initalize a new one using another vector's values., essentially making a full complete copy, 
+      
+     multiset<ll> snotherset(someset.begin(), someset.end();
 
-    cin >> initnum  >> k;
-    initnum = abs(initnum);
+     this is also true for the vector and you  can easily use this with vectors too.
+     
 
-    k = abs(k);
-    s.insert(initnum);
-    //IN MULTISETS, IF YOU NEEDD TO ERASE A SPECIFIC THING, YOU DO THIS:
-    /*if you need to delete the entrire srt of numbers of values from it, what you have to do is, > 
-     ms.erase(value);
-     and  this willdelete allt eh avalues of it.
-
-     if you need to delete the specific elementw which can also be a redundant one too, which means that it can also be aredundant value too.
-
-
-        auto it = ms.find(element);
-        ms.erase(it);
-        //this way, it only clears the specific iterator from it.
 
     */
-    auto elemnt =   s.find(initnum);
-    s.erase(elemnt);
-    int divider = initnum /k;
-    for(int i  =0 ;  i < k; i ++){
-        s.insert(divider);
-    
-    }
-    cout << divider << '\n';
+    int temp;
+    string temp2;
+    int numofc ;
+    cin >> numofc;
+    pair<int, string> tempp;
+
+    for(int i = 0;  i < numofc ; i++){
+        cin >> temp2 >> temp;
+        tempp.first = temp;
+        tempp.second = temp2;
+
+    playerprofile.insert(tempp);
 
     }
+
+    auto repitions;
+    for(auto x : playerprofile){
+        
+        if(x  == playerprofile.end()){
+            break;
+
+        }
+        
+        repitions = equal_range(x.first);
+            playerprofile.erase( repitions.first, repitions.second);
+
+
+    }
+    // for(;;){
+
+    
+    //     if(distance(repitions.first , repitions.second)){
+    //         /*the first isnt a integer her, but rather,m its a pointer, which means that if need to loiokj for whether specific values has reached top oits dead end, what we have to do is, we need to now, what we have to do now is, that we need to make is that wer need to check whethwer in the pair that is returned by the equal range set are the same., if they're same l, which means that, that specific mulitset or vector(yes thisd is salso vbaliexcd for vector stoo) themn it will gonna work*/
+
+    //         continue;
+            
+    // }
+
+    int counter = 0;
+
+    for(auto x : playerprofile){        
+        if(counter > numofc-4){
+            if(x == playerprofile.end()){
+                continue;   
+            }
+            cout << x.first  << ":"  << x.second<< "\n";
+
+        }
+        counter++;
+    }   
+    
 
 }
