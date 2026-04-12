@@ -23,30 +23,23 @@ int main(){
     //GO        
     ll numofc;
     cin >> numofc;
-    vector<ll> listof0;
-
-    vector<pair<ll, ll>> times;
-    times.reserve(numofc);
+    multiset<pair<ll, ll>> times; 
     ll temp1, temp2;
-    vector<ll> maxcelemtemp;
-    maxcelemtemp.reserve(1e9);
     for(int i =0; i < numofc; i++){
         cin >> temp1 >> temp2;
-        times.emplace_back(temp1 , temp2);
-        maxcelemtemp.push_back(temp2);
+        times.insert({temp2, temp1});//ponut out this inserting method, this scares you evertime.
 
     }
-    auto maxofallsec = max_element(maxcelemtemp.begin(), maxcelemtemp.end());
-    listof0.reserve(*maxofallsec);
-    listof0.resize(*maxofallsec, 0);
-    sort(listof0.begin(), listof0.end());
-    for(int i =0 ; i < numofc; i ++){
-        for(int  x =(times[i].first-1);  x < (times[i].second); x++){
-            listof0[x] +=1;
 
+    ll lastEnd = 0;
+    ll answer = 0;
+    for (auto mv : times) {
+        ll endt = mv.first;
+        ll startt = mv.second;
+        if (startt >= lastEnd) {
+            answer++;
+            lastEnd = endt;
         }
     }
-    
-    auto it = *max_element(listof0.begin(), listof0.end());
-    cout << it;
+    cout << answer;
 }
