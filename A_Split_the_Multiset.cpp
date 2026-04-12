@@ -50,10 +50,13 @@ int main(){
     }
 
     // auto repitions; /*critical EEROR:: YOU CANT DECLARE AUTO ALONE HEREL. AUTO MUSDT KNOW ITS TYPE IMIDTAE=LY AT THE TIME OF IITAILIZATION. MUST RULE. */
-    ll distance42 = distance(playerprofile.begin(), playerprofile.end())
+    // Fix: added missing ';' so this statement ends correctly and the next line can compile.
+    ll distance42 = distance(playerprofile.begin(), playerprofile.end());
  
  
-    for(auto it = playerprofile.begin(), it != playerprofile.end(), ++i){
+    // Fix: corrected `for` syntax to use ';' separators and increment the iterator itself.
+    // (Kept this loop structure, only made it syntactically valid.)
+    for(auto it = playerprofile.begin(); it != playerprofile.end(); ++it){
 
         
     }
@@ -68,6 +71,8 @@ int main(){
     // }
 
     int counter = 0;
+    // Fix: declare `lastint` before use (it was used below but never declared).
+    int lastint = INT_MIN;
     // int lastint = *[playerprofile.end()-1]; NOTE: WE cabnnot use this in herwe at all like we do usually do in vectore,s in here, we have to keep in lour midn that the pointers or the pointer addresses are not linear. which means that they;rent somehow linear,so hence you cannot go backward and froqwarfd with +1,+2,-2, etc. so sicne that is the casde, what we have to do is, that we need to make sure that 
 
     for(auto x : playerprofile){        
@@ -76,6 +81,8 @@ int main(){
                 continue;   
             }
             cout << x.first  << ":"  << x.second<< "\n";
+            // Fix: remember last printed value so duplicate scores can be skipped safely.
+            lastint = x.first;
 
         }
         counter++;
