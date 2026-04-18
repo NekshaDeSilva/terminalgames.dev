@@ -31,5 +31,31 @@ int main(){
         list.push_back(x);
 
     }
-   
+    ll numofits =0;
+    set<ll> counted;
+    for(ll i = 0; i < numofboxes; i++){
+        for(ll x = (i+1); x < numofboxes; x++){
+       
+              if(list[i] == list[x]){
+                counted.insert(numofits);
+                numofits=0;
+                continue;
+              }else{
+                numofits++;
+             cout << numofits;
+                      
+        }
+    } 
+    
+
+
+
+}
+auto maxstreak =max_element(counted.begin(), counted.end());
+    if(maxstreak != counted.end()){
+    cout << (*maxstreak) << "\n";
+    }else{
+    return 0;
+    
+    }
 }
