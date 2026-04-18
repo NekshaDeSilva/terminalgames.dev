@@ -21,8 +21,7 @@ int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
     ll numofboxes;
-    freopen("whereami.in", "r", stdin);
-    freopen("whereami.out", "w", stdout);
+
 
     vector<char> list;
     string input;
@@ -32,7 +31,5 @@ int main(){
         list.push_back(x);
 
     }
-    
-
-
+   
 }
