@@ -55,15 +55,32 @@ int main(){
     // hwo to get the highwest vcalue oin a any cpp program which is runningon a 64 bit arch.
     long long maximum_possible = numeric_limits<long long>::max();
     cout << maximum_possible;
+
+    //how to get the minimum negetive number possible
+    long long minimum_possible = numeric_limits<long long>::min();
+    cout << "min: "  << minimum_possible << "\n";
+
+
     
     // /**/////THIS IS AWWESOME. Im gonna fill up a multiset, unorderdmultiset, srt and a map with vector data as the initial input and declatre it one.,c and alos, this can also be used for othetr vectors too. menaing thatk, toyoyu can crwate a compete duoploicate vector by sukgn this vmthosd as wlel. */
 
     vector<ll> orginal;
     //CRITICAL. to iota TO fucntion correctly, it must have a size in order to fill it up., if the vector is already ameptyy, then it wont work vbeacsue it cannotr push back intop it
     orginal.resize(maximum_possible);
-    
+
     iota(orginal.begin(),  orginal.end(), 1);
     for (ll  i  =0;  i < orginal.size(); i++){
         cout << "\n" << orginal[i] <<  "\n";
     }
+
+    //rehersal binary search
+
+    unordered_multiset<ll> list;
+    //just a reminder for the loop that wqe use to loop thorugh the all elemnts without in things like sets, multisets, maps., and unordered multisets, and vector even;
+
+    for(ll i =list.begin(); i != list.end();  i++){
+        
+    }
+
+
 }
