@@ -26,7 +26,8 @@ int main(){
     ll target;
     cin >> numfoelms >> target;
     unordered_multiset<ll> list;
-    map<ll, pair<ll,ll>> positions;
+    unordered_map<ll, pair<ll,ll>> positions;
+    positions.reserve(numfoelms * 2);
     ll temp2;
     unordered_multiset<ll> disvect;
     disvect.reserve(numfoelms);
@@ -48,13 +49,13 @@ int main(){
     ll diff =0;
     bool found = false;
     ll diffabs;
-    for(auto i = positions.begin(); i != positions.end(); i++){
-        diff = target - (*i).first;
-        auto rest = positions.find(diff);
-        diffabs = (*i).first;
+    for(auto i = list.begin(); i != list.end(); i++){
+        diff = target - (*i);
+        auto rest = list.find(diff);
+        diffabs = (*i);
         ll diff2 = 0;
-        if(rest != positions.end()){
-            diff2 = (*rest).first;
+        if(rest != list.end()){
+            diff2 = (*rest);
         }else{
             diff2 = pow(target, 2);
         }
@@ -62,10 +63,10 @@ int main(){
            ll distance1= 0;
            ll distance2 = 0;
         //  cout << (i- list.begin()) << "\n"; POINT IT OUT: THIS ONE IS CRITICAL AND READ THIS, THIS IS NOPT CORRCTR BECAUSE OF A REASON THAT IN MAPS, THE KEYS ARE NOT ASSIGNED IN A INCREMENTAL WAY, MEANING THAT THEY DO NOT BAHAVE LIKE THE FIRTS POINTER 1, 2,3,4,5,6,, << THAT IS NOT HOW THEY STORE THE VALUES. INSTEAD, HOW IT STORES THE VALUES ARE A BIG TOPIC WHICH NEEDSA CAREFIUL CONSIDERATION. which means that, if you need to gt the distance from the bginning onwards, this methodd wont be able to use because its not in sequuential order like vectors or multisets or sets, this patten is also seen in unordered multisets and unoprdered sets and unordered maps.
-                         ll value1 = (*i).first;
+                         ll value1 = (*i);
 
-                     if(( diffabs+ diff2 ) == target && rest != positions.end()){
-                         ll value2 = (*rest).first;
+                     if(( diffabs+ diff2 ) == target && rest != list.end()){
+                         ll value2 = (*rest);
 
                          if(value1 == value2){
                                 if(positions[value1].second == -1){

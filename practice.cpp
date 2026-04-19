@@ -37,9 +37,11 @@ int main(){
     }else{
         for(auto x= thepos; x!=(thepos+(substringpaty.length()));x++){
             cout << mystreingnext[x];//notwe thois way we need to print out that specific elemtn in a string., kinda a hidden thi ng you know.
-            
+
         }
     }
+
+    
     return 0;
 
 }
