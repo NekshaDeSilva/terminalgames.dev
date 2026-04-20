@@ -20,41 +20,45 @@ using namespace std;
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
-  
-    ll numofboxes;
-    string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-
     vector<char> list;
-    string input;
-    cin >> numofboxes;
-    cin >> input;
-    // iota test
-    // vector<char> alpha;
-    // alpha.resize(26);
-    // iota(alpha.begin(), alpha.end(), 'a');
-    // for(int i =0 ; i < alpha.size(); i ++){
-    //     cout << alpha[i];
-    // } 
-    int maxs = 0;
+    ll temp;
+    cin >> temp;
+    list.resize(temp);  
+    ll dividened = temp/26;
+    ll  remaining  = temp%26;
+    if(remaining != 0 ){
+ for(ll i =1; i < (dividened); i++){
+        auto pos = list.begin() + (i*26);
+        
+    
+        if(i <= dividened+1){
+            iota(pos-26, /*pointer arithmetic*/ pos, 'a');
 
-    for(int i = 1; i <= numofboxes; i++){
-        set<string> seen;
-        bool ok = true;
-        for(int j = 0; j + i <= numofboxes; j++){
-            auto current = input.substr(j, i);
-            if(seen.find(current) != seen.end()){
-                ok = false;
-                break;
-            }
-            seen.insert(current);
-        }
-        if(ok){
-            maxs = i;
+        }else{
+            auto pos1 = pos-25;
+
+            iota(pos1, (pos1+remaining), 'a'  );
+            
             break;
+
         }
     }
-    cout << maxs;
-    
-    
-}   
+
+    }else if(remaining == 0 && temp > 26){
+         for(ll i =1; i < (dividened+2); i++){
+             auto pos = list.begin() + (i*26);//this is called the offset. in pointer arithmetic, this is called as the pointer offset, which means that ww can determine the position of the specific value that we eex to look foor by relating themwith the list.beign() or list.end() or a relative valeu that wever previopiuslyt got.
+
+        
+            iota(pos-26, /*pointer arithmetic*/ pos, 'a');
+
+        
+        }
+    }else{
+        iota(list.begin(), list.end(), 'a');
+    }
+   
+    for(ll i = 0; i < temp; i++){
+        cout << list[i];
+    }
+
+}

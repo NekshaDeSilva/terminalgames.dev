@@ -20,41 +20,8 @@ using namespace std;
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
-  
-    ll numofboxes;
-    string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-
-    vector<char> list;
-    string input;
-    cin >> numofboxes;
-    cin >> input;
-    // iota test
-    // vector<char> alpha;
-    // alpha.resize(26);
-    // iota(alpha.begin(), alpha.end(), 'a');
-    // for(int i =0 ; i < alpha.size(); i ++){
-    //     cout << alpha[i];
-    // } 
-    int maxs = 0;
-
-    for(int i = 1; i <= numofboxes; i++){
-        set<string> seen;
-        bool ok = true;
-        for(int j = 0; j + i <= numofboxes; j++){
-            auto current = input.substr(j, i);
-            if(seen.find(current) != seen.end()){
-                ok = false;
-                break;
-            }
-            seen.insert(current);
-        }
-        if(ok){
-            maxs = i;
-            break;
-        }
-    }
-    cout << maxs;
+    freopen("tttt.in", "r", stdin);
+    freopen("tttt.out", "w", stdout);
     
-    
-}   
+
+}
