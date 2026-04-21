@@ -22,6 +22,68 @@ int main(){
     cin.tie(NULL);
     freopen("tttt.in", "r", stdin);
     freopen("tttt.out", "w", stdout);
+    set<set<char>> board;
+    char temp ;
+    vector<vector<char>> tempdiagonals;
+    tempdiagonals.resize(3);
+    for(int i =0;  i <  3 ;i++){
+        tempdiagonals[i].resize(3);
+
+    }
+    for(int i = 0;  i < 3; i ++){
+        set<char> temprow1;
+
+        for(int x = 0; x < 3; x++){
+            cin >> temp;
+            tempdiagonals[i][x]  = temp;
+
+            temprow1.insert(temp);
+
+        }
+        board.insert(temprow1);;
+        
+
+    } 
+
+    for(int x = 0; x < 3; x++){
+        set<char> tempcol;
+        for(int i = 0; i < 3; i++){
+            tempcol.insert(tempdiagonals[i][x]);
+        }
+        board.insert(tempcol);
+    }
+
+    int sstate = 1;
+    for(int i = 0;  i < 2; i++){
+        set<char> tempset2;
+       
+        if(sstate == 1){
+           tempset2.insert(tempdiagonals[0][0]);
+           tempset2.insert(tempdiagonals[1][1]);
+           tempset2.insert(tempdiagonals[2][2]);
+           sstate = 3;
+        }else{
+           tempset2.insert(tempdiagonals[0][2]);
+           tempset2.insert(tempdiagonals[1][1]);
+           tempset2.insert(tempdiagonals[2][0]);
+        }
+        
+        board.insert(tempset2);
+    }
+
+    int cntteams  = 0;
+    int cntind = 0;
+    
+    for(auto i : board){
+        int tempcount = i.size();
+        if(tempcount == 1){
+            cntind++;
+        }else if(tempcount == 2){
+            cntteams++;
+        }
+    }
+
+    cout << cntind << "\n" << cntteams;
     
 
 }
