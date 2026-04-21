@@ -1,3 +1,4 @@
+/*Nekshavs*/
 #include <iostream>
 #include <iomanip>
 #include <map>
@@ -19,5 +20,21 @@ int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
     //dont have to feel safe
+    ll numofcows  = 0;
+    string tempstirng;
+    vector<vector<string>> list;
+    list.resize(numofcows);
+    for(ll x = 0 ; x < numofcows; x++){
+
     
+    for(ll i =0; ll < 8; i++){
+        cin >> tempstirng;
+        list[i].push_back(tempstirng);
+
+
+    }
+}
+    map<string, ll> cowdata;
+    
+
 }
