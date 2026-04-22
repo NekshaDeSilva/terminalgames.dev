@@ -21,5 +21,7 @@ int main(){
     cin.tie(NULL);
     // freopen("citystate.in", "r" ,stdin);
     // freopen("citystate.out", "w" , stdout);
-
-}
+    ll numofcities  =0; 
+    vector<pair<string, string>> maps;
+    
+ }
