@@ -19,6 +19,8 @@ using namespace std;
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
+    // freopen("notlast.in", "r" ,stdin);
+    // freopen("notlast.out", "w" , stdout);
     ll numofdigs = 0;
     cin >> numofdigs;
     multiset<ll> list;
