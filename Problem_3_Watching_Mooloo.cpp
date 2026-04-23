@@ -19,7 +19,9 @@ using namespace std;
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
-    freopen("breedflip.in", "r" ,stdin);
-    freopen("breedflip.out", "w" , stdout);
+    // freopen("breedflip.in", "r" ,stdin);
+    // freopen("breedflip.out", "w" , stdout);
+    ll n, k ;
+    
 
 }
