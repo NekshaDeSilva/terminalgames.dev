@@ -14,14 +14,12 @@
 #include <string>
 #include <array>
 #include <vector>
-// #include <fstream>  a new lib just used for context
 using  ll =long long;
 using namespace std;
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
-    //freopen("promote.in", "r" ,stdin);
-    //freopen("promote.out", "w" , stdout);
-    temp numofcows;
-    cin>> numof
+    freopen("breedflip.in", "r" ,stdin);
+    freopen("breedflip.out", "w" , stdout);
+
 }

@@ -20,8 +20,8 @@ using namespace std;
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
-    freopen("promote.in", "r" ,stdin);
-    freopen("promote.out", "w" , stdout);
+    //freopen("promote.in", "r" ,stdin);
+    //freopen("promote.out", "w" , stdout);
     vector<pair<ll, ll>> comps;
     comps.resize(4);
 
