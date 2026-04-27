@@ -39,27 +39,18 @@ int main(){
     ll  accu = 0;
     ll counter =0;
     ll diff;
-    prefixsummed[0] = 0;
+    prefixsummed[0] = 1;
 
     for(ll i = 0 ;  i < numofints; i ++){
         accu+= list[i];
 
         diff = accu - target;
         
-        auto newpos = next(prefixsummed.begin(), i);//in here, the fierst elemtn is a pointer while the second element is a integer or a normal value. and tatts okay because that is the specific style that this asks for .
-
-
-
-        
-        ll counted = prefixsummed.count(diff);
-        if(counted != 0){
-            counter++;
-
+        if(prefixsummed.count(diff)){
+            counter += prefixsummed[diff];
         }
         
-
-        
-        prefixsummed[list[i]]++;
+        prefixsummed[accu]++;
 
     }
     cout << counter;

@@ -53,11 +53,13 @@ int main(){
     // //the upper process will become only just o(n);
     // -1 3 -2 5 3 -5 2 2
     // 0 2  0 5 8  3 5 7
-      auto max = max_element(sums.begin(), sums.end());
-    auto min = min_element(sums.begin(), max);
+    ll result = -1e18;
+    ll minsfar = sums[0];
+    for (int i = 1; i <= numofelms; ++i) {
+        result = max(result, sums[i] - minsfar);
+        minsfar = min(minsfar, sums[i]);
+    }
 
-
-    ll result = *max - *min;
     cout << result;
     
 
