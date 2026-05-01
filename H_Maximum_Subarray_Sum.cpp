@@ -24,5 +24,27 @@ int main(){
     ios_base::sync_with_stdio(false);
     //go
 
-    
+    ll numofelms = 0;
+    cin >> numofelms;
+    vector<ll> values;
+    ll temp;
+    for(ll i =  0 ; i < numofelms ; i++){
+        cin >> temp;
+        values.pb(temp);
+        
+
+    }
+
+    vector<ll> prefixes;
+    ll accum  =0;
+    ll curr;
+ll  min  = numeric_limits<ll>::min();
+    for(ll i= 0;  i < numofelms; i ++){
+        curr +=     
+        prefixes[i] += curr;
+        
+        
+
+
+    }
 }
