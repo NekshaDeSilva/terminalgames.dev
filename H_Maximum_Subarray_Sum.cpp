@@ -16,8 +16,8 @@
 
 using namespace std;
 using ll = long long ;
-#define pb push_back(x)
-#define eb emplace_back(x)
+#define pb(x) push_back(x)
+#define eb(x) emplace_back(x)
 
 int main(){
     cin.tie(NULL);
@@ -36,13 +36,24 @@ int main(){
     }
 
     vector<ll> prefixes;
+    prefixes.resize(numofelms);
+
+    
     ll accum  =0;
-    ll curr;
-ll  min  = numeric_limits<ll>::min();
+    ll curr =0;
+ll  ll minm  = numeric_limits<ll>::min();
+
     for(ll i= 0;  i < numofelms; i ++){
-        curr +=     
-        prefixes[i] += curr;
+        curr =    values[i] 
+        if(prefixes[i] > minm){
+            accum=0;
+            accum += curr;
+            prefixes[i] += 
+            minm = prefixes[i];
+        }
+
         
+
         
 
 
