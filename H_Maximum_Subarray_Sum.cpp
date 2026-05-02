@@ -3,59 +3,55 @@
 #include <string>
 #include <cmath>
 #include <climits>
-#include <numeric>
+#include <utility>
+#include <cstdio>
 #include <vector>
-#include <set>
-#include <unordered_set>
 #include <map>
 #include <unordered_map>
+#include <unordered_set>
+#include <set>
 #include <random>
-#include <cstdio>
-#include <fstream>
-#include <utility>
-
+#include <numeric>
+#include <algorithm>
 using namespace std;
 using ll = long long ;
-#define pb(x) push_back(x)
-#define eb(x) emplace_back(x)
-
 int main(){
     cin.tie(NULL);
-    ios_base::sync_with_stdio(false);
-    //go
-
-    ll numofelms = 0;
+    ios_base::sync_with_stdio(0);
+    //GO
+    ll numofelms;
     cin >> numofelms;
-    vector<ll> values;
+    vector<ll > initones;
     ll temp;
-    for(ll i =  0 ; i < numofelms ; i++){
+    for(ll i= 0;  i< numofelms ; i++){
         cin >> temp;
-        values.pb(temp);
+        initones.push_back(temp);
+
+    }   
+
+    //now we have them
+    ll maxpossible = numeric_limits<ll >::min();
+    ll accum = 0;
+    vector<ll> prefix;
+    for(ll i =0 ; i < (numofelms) ;  i++){
+        accum +=  initones[i];
+    if(accum > maxpossible){
+       
+        maxpossible = accum;
+
+      
+        
         
 
     }
-
-    vector<ll> prefixes;
-    prefixes.resize(numofelms);
+    if(accum < 0){
+          accum = 0;
+        
+    }
+   
+    }
 
     
-    ll accum  =0;
-    ll curr =0;
-ll  ll minm  = numeric_limits<ll>::min();
-
-    for(ll i= 0;  i < numofelms; i ++){
-        curr =    values[i] 
-        if(prefixes[i] > minm){
-            accum=0;
-            accum += curr;
-            prefixes[i] += 
-            minm = prefixes[i];
-        }
-
-        
-
-        
-
-
-    }
+    cout << maxpossible;
+    
 }
