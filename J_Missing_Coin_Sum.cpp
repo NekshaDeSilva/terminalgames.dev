@@ -20,8 +20,8 @@ using ss  = string;
 using dd  = double;
 #define pb(x) push_back(x)
 #define eb(x) emplace_back(x)
-
-
+/*this is a specific greedy concept named as this, and you need to keep that in your mind to do anythinfg else becasue its required. */
+/*Greedy Range Expansion (or sometimes the Subset Sum Range property).*/
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
