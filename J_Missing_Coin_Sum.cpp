@@ -12,7 +12,7 @@
 #include <climits>
 #include <utility>
 #include <random>
-#include <cstidio>
+#include <cstdio>
 using namespace std;
 using ll = long long;
 using iii = int;
@@ -21,9 +21,21 @@ using dd  = double;
 #define pb(x) push_back(x)
 #define eb(x) emplace_back(x)
 
-int main(){
-    ios_base::sync_with_stdio(false);
+
+int main() {
+    ios::sync_with_stdio(false);
     cin.tie(NULL);
-    //go
+
+    ll numofvals ;
+    cin >> numofvals;
+    vector<ll> list;
+    ll tmp;
+
+    for(ll i = 0; i < numofvals; i++){
+        cin >> tmp;
+        list.push_back(tmp);
+
+    }
     
+    return;
 }
