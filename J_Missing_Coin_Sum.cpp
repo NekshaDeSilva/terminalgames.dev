@@ -36,6 +36,22 @@ int main() {
         list.push_back(tmp);
 
     }
+    ll prev = 0;
+    sort(list.begin(), list.end());
     
-    return;
+
+    
+    for(auto eachelm : list){
+        
+        if(prev+1 < eachelm){
+
+            break;
+
+        }
+        prev+= eachelm;
+
+    }
+    cout << prev+1;
+
+    return 0 ;
 }
