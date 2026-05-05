@@ -31,8 +31,25 @@ int main() {
     list.resize(numofvals);
 
     for(ll i  =0 ;i <numofvals;  i++ ){
-        cin >> numofvals[i];    
+        cin >> list[i];    
     }
+   vector<ll> listcopy;
+   listcopy.resize(numofvals+1);
 
-    
+   ll counter1= 0 ;
+
+   for(auto x: list){
+   
+    listcopy[x] = counter1;
+ counter1++;
+   }
+   ll numofrounds = 1;
+
+   for(ll i =  1;i< numofvals; i++){
+    if(listcopy[i] > listcopy[i+1]){
+        numofrounds++;
+    }
+   }
+   cout << numofrounds;
+
 }
