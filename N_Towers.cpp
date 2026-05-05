@@ -19,10 +19,23 @@ using iii = int;
 using ss  = string;
 using dd  = double;
 #define pb(x) push_back(x)
-    #define eb(x) emplace_back(x)
-    
+#define eb(x) emplace_back(x)
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+    ll numofcubs = 0;
+    vector<ll> cubsizes;
+    cubsizes.reserve(numofcubs);
+    cin>> numofcubs;
+    ll temp2;
 
+    for( ll i = 0; i < numofcubs ; i ++){
+        cin >> temp2;
+        cubsizes.push_back(temp2);
+
+    }
+
+    //go
+    
 }
