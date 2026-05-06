@@ -2,29 +2,30 @@
 #include <iomanip>
 #include <string>
 #include <vector>
-#include <unordered_map>
 #include <map>
 #include <set>
+#include <unordered_map>
 #include <unordered_set>
-#include <numeric>
-#include <algorithm>
 #include <cmath>
 #include <climits>
-#include <utility>
 #include <random>
+#include <fstream>
+#include <algorithm>
+#include <utility>
+#include <numeric>
 #include <cstdio>
-
 using namespace std;
-using ll = long long;
-using iii = int;
+using ll =  long long;
 using ss = string;
 using dd = double;
-
+#define sort(x) sort(x.begin(), x.end())
 #define pb(x) push_back(x)
-#define eb(x) emplace_back(x)
 
-int main() {
-    ios_base::sync_with_stdio(false);
+int main(){
+    ios_base::sync_with_stdio(0);
     cin.tie(NULL);
+    //GO
+
+
     
 }
