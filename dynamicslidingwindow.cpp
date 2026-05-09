@@ -68,7 +68,8 @@ int main(){
 
     }
     
-    if(maxvals.size() == 0){
+    if(maxvals.size()> 0){
+        
         ll  maxval = *max_element(maxvals.begin(), maxvals.end());
         cout << maxval;
     }else{
