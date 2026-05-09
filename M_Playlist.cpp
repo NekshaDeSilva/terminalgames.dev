@@ -28,10 +28,28 @@ int main(){
     ll numofsongs;
     vector<ll > list;
     cin >> numofsongs;
-    ll temp;
+    
+    vector<ll> list(numofsongs);
     for(ll i  = 0 ; i < numofsongs; i++){
-        cin >> tmep;
-        list.push_back(temp);
+        cin >> list[i];
     }
+        map<ll, ll> last_seen;
+
+    ll maxvalsofar = 0;
+    ll left = 0;
+    
+    for(ll right = 0; right < numofsongs ; right++){
+        ll current_song = list[right];
+        
+        if(last_seen.count(current_song) && last_seen[current_song] >= left) {
+            left = last_seen[current_song] + 1;
+        }
+        
+        last_seen[current_song] = right;
+        maxvalsofar = max(maxvalsofar, right - left + 1);
+    }
+    
+    cout << maxvalsofar << "\n";
+    return 0;
     
 }
